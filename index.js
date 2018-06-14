@@ -42,7 +42,11 @@ function renderFrame() {
    // console.log(frequencyData)
 }
 
-audio.play();
+window.addEventListener("click", function() {
+  if (audio.paused) audio.play();
+  else audio.pause();
+} )
+
 console.log(frequencyData);
 console.log(size);
 console.log(canvas);
