@@ -2,10 +2,10 @@
 var canvas = document.getElementById('canvas1');
 var canvasSecond = document.getElementById('canvas2');
 //Sets canvas to size of window
-canvas.width = 768;
-canvas.height = 768;
-canvasSecond.width = 768;
-canvasSecond.height = 768;
+canvas.width = 600;
+canvas.height = 600;
+canvasSecond.width = 600;
+canvasSecond.height = 600;
 
 var c = canvas.getContext("2d");
 var c2 = canvasSecond.getContext("2d");
@@ -13,12 +13,8 @@ var ctx = new AudioContext();
 var audio = document.getElementById('myAudio');
 var audioSrc = ctx.createMediaElementSource(audio);
 var analyser = ctx.createAnalyser();
-// we have to connect the MediaElementSource with the analyser
 audioSrc.connect(analyser);
 audioSrc.connect(ctx.destination);
-// we could configure the analyser: e.g. analyser.fftSize (for further infos read the spec)
-
-// frequencyBinCount tells you how many values you'll receive from the analyser
 var frequencyData = new Uint8Array(analyser.frequencyBinCount);
 var timeData = new Uint8Array(analyser.frequencyBinCount);
 var size = frequencyData.length
